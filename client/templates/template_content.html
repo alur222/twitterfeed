@@ -1,0 +1,8 @@
+<template name="content">
+  <p id="notification"> Getting tweets... </p>
+  <div id="tweets">
+    {{# each tweets}}
+      <p class="single_tweet"> {{text}} </p>
+    {{/each}}
+  </div>
+</template>
