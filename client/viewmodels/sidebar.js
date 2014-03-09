@@ -25,8 +25,9 @@ Template.sidebar.rendered = function(){
 				$("#notification").text("Can't load tweets. Please try again...");
 			}else{
 				$("#notification").hide();
-				$("#tweets").show();
+				$("#tweets").show(); 
 				Session.set("tweets",results.data);
+				// console.log( results.data );
 			}
 		});
 
@@ -53,16 +54,16 @@ Template.sidebar.rendered = function(){
 
 		var hashtag = x.replace(/([\@\#]*)/,'') ;		
 
-		console.log(hashtag);
+		// console.log(hashtag);
 
 		Meteor.call( "getHashtagTweets", hashtag, Session.get("bearertoken"), function(error,results){
 			if(error){
 				$("#notification").text("Can't load tweets. Please try again...");
 			}else{
 				$("#notification").hide();
-				$("#tweets").show();
-				console.log( results.data.statuses );
-				// Session.set("tweets",JSON.parse(results.data.statuses);
+				$("#tweets").show(); 
+				// console.log( results.data.statuses );
+				Session.set("tweets", results.data.statuses );
 			}
 		});
 

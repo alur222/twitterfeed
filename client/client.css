@@ -52,5 +52,19 @@ li .active {
   padding: 15px;
   border-color: rgb(34, 92, 26);
   font: small-caption;
-  font-size: small;
+  font-size: larger;
+  font-style: oblique;
+  color: tomato;
+}
+
+.tweetdate {
+	font-size: 10px;
+	font-style: normal;
+	color: burlywood;
+}
+
+#twtable_wrapper label{
+	display: inline-flex;
+	margin-bottom: 0;
+	font-weight: inherit;
 }

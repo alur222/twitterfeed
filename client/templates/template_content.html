@@ -1,8 +1,32 @@
 <template name="content">
   <p id="notification"> Getting tweets... </p>
   <div id="tweets">
-    {{# each tweets}}
-      <p class="single_tweet"> {{text}} </p>
-    {{/each}}
+  	{{#if tweets}}
+  		<table id="twtable" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
+		    <thead>
+		    	<tr>
+		    		<td></td>
+		    	</tr>
+		    </thead>
+		    
+		    <tbody>
+		    	{{# each tweets}}
+		    	<tr>
+		    		<td>
+				      <p class="single_tweet"> 
+				      	{{findLinks text}} 
+				      	<br>
+				      	<br>
+				      	<span class="tweetdate">{{created_at}}</span>
+				      </p> 
+				    </td>
+				  </tr>
+				  {{/each}}
+				</tbody>
+		    
+	  	</table>
+    {{else}}
+    	<p>No tweets for user/hashtag</p>
+    {{/if}}
   </div>
 </template>
